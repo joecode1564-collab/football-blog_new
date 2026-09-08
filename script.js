@@ -1,4 +1,4 @@
-// Football Focus - Basic Interactivity
+// Football Focus - Enhanced Interactivity
 
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
@@ -14,6 +14,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Search toggle functionality
+    const searchToggle = document.querySelector('.search-toggle');
+    const searchBox = document.querySelector('.search-box');
+    
+    if (searchToggle && searchBox) {
+        searchToggle.addEventListener('click', function() {
+            searchBox.classList.toggle('active');
+            // Focus on search input when opened
+            if (searchBox.classList.contains('active')) {
+                const searchInput = searchBox.querySelector('input[type="text"]');
+                if (searchInput) {
+                    searchInput.focus();
+                }
+            }
+        });
+        
+        // Close search when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!searchToggle.contains(e.target) && !searchBox.contains(e.target)) {
+                searchBox.classList.remove('active');
+            }
+        });
+    }
+    
     // Newsletter form submission
     const newsletterForm = document.querySelector('.newsletter-form');
     if (newsletterForm) {
@@ -21,10 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const emailInput = this.querySelector('input[type="email"]');
             if (emailInput.value.trim() !== '') {
-                alert('Thank you for subscribing! You\'ll receive the latest football updates.');
+                // In a real app, this would submit to a backend
+                showNotification('Thank you for subscribing! You\'ll receive the latest football updates.', 'success');
                 emailInput.value = '';
             } else {
-                alert('Please enter a valid email address.');
+                showNotification('Please enter a valid email address.', 'error');
             }
         });
     }
@@ -102,5 +127,66 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = 'translateY(0)';
             this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
         });
+    });
+    
+    // Notification system
+    function showNotification(message, type = 'info') {
+        // Remove any existing notifications
+        const existingNotifications = document.querySelectorAll('.notification');
+        existingNotifications.forEach(notif => notif.remove());
+        
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <span class="notification-message">${message}</span>
+                <button class="notification-close" aria-label="Close notification">&times;</button>
+            </div>
+        `;
+        
+        // Add to document
+        document.body.appendChild(notification);
+        
+        // Add close functionality
+        const closeBtn = notification.querySelector('.notification-close');
+        closeBtn.addEventListener('click', () => {
+            notification.remove();
+        });
+        
+        // Auto-remove after 5 seconds
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.remove();
+            }
+        }, 5000);
+    }
+    
+    // Make showNotification globally available
+    window.showNotification = showNotification;
+    
+    // Initialize article card animations on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all article cards for animation
+    const articleCards = document.querySelectorAll('.article-card');
+    articleCards.forEach(card => {
+        // Reset initial state
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        observer.observe(card);
     });
 });

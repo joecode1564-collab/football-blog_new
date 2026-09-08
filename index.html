@@ -12,37 +12,117 @@
         <div class="container">
             <div class="logo">
                 <h1>Football Focus</h1>
+                <p class="tagline">Latest Football News, Match Reports & Transfer Updates</p>
             </div>
             <nav class="nav-menu">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Matches</a></li>
-                    <li><a href="#">Transfers</a></li>
-                    <li><a href="#">Leagues</a></li>
-                    <li><a href="#">More</a></li>
+                    <li class="has-dropdown">
+                        <a href="#">Leagues ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Premier League</a></li>
+                            <li><a href="#">La Liga</a></li>
+                            <li><a href="#">Bundesliga</a></li>
+                            <li><a href="#">Serie A</a></li>
+                            <li><a href="#">Ligue 1</a></li>
+                            <li><a href="#">Champions League</a></li>
+                            <li><a href="#">Europa League</a></li>
+                            <li><a href="#">International</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#">Matches ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Today's Matches</a></li>
+                            <li><a href="#">Live Now</a></li>
+                            <li><a href="#">Upcoming Fixtures</a></li>
+                            <li><a href="#">Recent Results</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#">Transfers ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Latest Transfers</a></li>
+                            <li><a href="#">Transfer Rumors</a></li>
+                            <li><a href="#">Free Agents</a></li>
+                            <li><a href="#">Transfer Deadline Day</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Tables</a></li>
+                    <li><a href="#">Stats</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-toggle" aria-label="Open menu">
-                <span class="hamburger"></span>
-            </button>
+            <div class="header-actions">
+                <button class="search-toggle" aria-label="Search">
+                    <span>🔍</span>
+                </button>
+                <div class="search-box">
+                    <form class="search-form">
+                        <input type="text" placeholder="Search for teams, players, matches..." aria-label="Search football content">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Open menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
         </div>
     </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li class="active">Latest Football News & Updates</li>
+            </ol>
+        </div>
+    </nav>
 
     <main class="site-main">
         <section class="hero-section">
             <div class="container">
                 <article class="featured-article">
+                    <div class="article-badge">BREAKING</div>
                     <div class="article-category transfer-news">Transfer News</div>
                     <h2>Mbappé Completes Move to Real Madrid in Record Deal</h2>
-                    <p class="article-meta">By Football Focus • 2 hours ago • 5 min read</p>
-                    <p class="article-excerpt">Kylian Mbappé has finally made his long-awaited move to Real Madrid in a transfer that could reshape the balance of power in European football...</p>
-                    <a href="#" class="read-more">Read Full Story →</a>
+                    <div class="article-meta">
+                        <span>By Football Focus</span>
+                        <span>•</span>
+                        <span>2 hours ago</span>
+                        <span>•</span>
+                        <span>5 min read</span>
+                    </p>
+                    <p class="article-excerpt">Kylian Mbappé has finally made his long-awaited move to Real Madrid in a transfer that could reshape the balance of power in European football. The deal, worth an initial €180 million with potential add-ons taking it to €220 million, makes him the most expensive player in football history...</p>
+                    <div class="article-actions">
+                        <a href="#" class="btn btn-primary">Read Full Story →</a>
+                        <a href="#" class="btn btn-outline">Watch Transfer Details</a>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Transfer News</span>
+                        <span class="tag">Real Madrid</span>
+                        <span class="tag">PSG</span>
+                        <span class="tag">Ligue 1</span>
+                        <span class="tag">La Liga</span>
+                    </div>
                 </article>
             </div>
         </section>
 
         <section class="content-section">
             <div class="container">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h2>Latest Football Updates</h2>
+                    <div class="content-tabs">
+                        <button class="tab-active" data-tab="all">All Content</button>
+                        <button data-tab="matches">Matches</button>
+                        <button data-tab="transfers">Transfers</button>
+                        <button data-tab="features">Features</button>
+                    </div>
+                </div>
+                
                 <div class="articles-grid">
                     <!-- Match Report -->
                     <article class="article-card match-report">
@@ -153,6 +233,74 @@
                         <p class="article-excerpt">Arsenal and Chelsea played out a 1-1 draw in a tightly contested North London derby that had implications for both teams' European hopes...</p>
                         <a href="#" class="read-more">Read Match Report →</a>
                     </article>
+                    
+                    <!-- Feature Article -->
+                    <article class="article-card feature">
+                        <div class="article-category feature">Feature</div>
+                        <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Football+Tactics" alt="Football Tactics Analysis">
+                        <div class="feature-content">
+                            <h3>The Evolution of Modern Full-Backs</h3>
+                            <p class="article-excerpt">From defensive stalwarts to attacking wing-backs, how the full-back position has transformed in modern football tactics...</p>
+                            <div class="feature-tags">
+                                <span class="tag">Tactics</span>
+                                <span class="tag">Analysis</span>
+                                <span class="tag">Premier League</span>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more">Read Feature →</a>
+                    </article>
+                    
+                    <!-- Transfer Rumor -->
+                    <article class="article-card transfer-news transfer-rumor">
+                        <div class="article-category transfer-news">Transfer Rumor</div>
+                        <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Transfer+Rumor" alt="Transfer Rumor">
+                        <div class="transfer-info">
+                            <div class="player-name">Vinícius Júnior</div>
+                            <div class="transfer-details">
+                                <span class="transfer-fee">€150m+</span>
+                                <span class="transfer-status">Rumor</span>
+                            </div>
+                            <div class="clubs">
+                                <div class="club from">
+                                    <img src="https://via.placeholder.com/20/ffffff/000000?text=REAL" alt="Real Madrid">
+                                    <span>Real Madrid</span>
+                                </div>
+                                <div class="arrow">→</div>
+                                <div class="club to">
+                                    <img src="https://via.placeholder.com/20/ffffff/000000?text=PSG" alt="PSG">
+                                    <span>Paris Saint-Germain</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>PSG Preparing Mega Offer for Vinícius Júnior</h3>
+                        <p class="article-excerpt">Paris Saint-Germain are reportedly preparing a groundbreaking offer that could test Real Madrid's resolve to keep their Brazilian star...</p>
+                        <a href="#" class="read-more">Read Rumor →</a>
+                    </article>
+                    
+                    <!-- Stats/Analysis Card -->
+                    <article class="article-card stats">
+                        <div class="article-category stats">Stats Center</div>
+                        <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Stats+Analysis" alt="Statistical Analysis">
+                        <div class="stats-content">
+                            <h3>Player Performance Tracker</h3>
+                            <p class="article-excerpt">Who are the top performers in Europe's top 5 leagues this season? We break down the numbers...</p>
+                            <div class="stats-preview">
+                                <div class="stat-item">
+                                    <div class="stat-value">12.3</div>
+                                    <div class="stat-label">xG per 90</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">87%</div>
+                                    <div class="stat-label">Pass Accuracy</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">3.2</div>
+                                    <div class="stat-label">Key Passes</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more">View Stats →</a>
+                    </article>
                 </div>
             </div>
         </section>
@@ -162,27 +310,129 @@
                 <h3>Live Matches</h3>
                 <div class="live-match-item">
                     <div class="teams">
-                        <div class="team">
+                        <div class="team home">
                             <img src="https://via.placeholder.com/20/ffffff/000000?text=BAR" alt="Barça">
                             <span>Barcelona</span>
                         </div>
                         <span class="score">2</span>
                     </div>
                     <div class="teams">
-                        <div class="team">
+                        <div class="team away">
                             <img src="https://via.placeholder.com/20/ffffff/000000?text=REAL" alt="Real">
                             <span>Real Madrid</span>
                         </div>
                         <span class="score">1</span>
                     </div>
                     <div class="match-time">82'</div>
+                    <div class="match-events">
+                        <span class="event goal">⚽ 45'</span>
+                        <span class="event sub">🔄 67'</span>
+                        <span class="event goal">⚽ 80'</span>
+                    </div>
                 </div>
                 <div class="live-match-item">
                     <div class="teams">
+                        <div class="team home">
+                            <img src="https://via.placeholder.com/20/ffffff/000000?text=ARS" alt="Arsenal">
+                            <span>Arsenal</span>
+                        </div>
+                        <span class="score">0</span>
+                    </div>
+                    <div class="teams">
+                        <div class="team away">
+                            <img src="https://via.placeholder.com/20/ffffff/000000?text=CHE" alt="Chelsea">
+                            <span>Chelsea</span>
+                        </div>
+                        <span class="score">0</span>
+                    </div>
+                    <div class="match-time">78'</div>
+                    <div class="match-events">
+                        <span class="event card">🟨 34'</span>
+                        <span class="event card">🟨 52'</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="widget league-table">
+                <h3>Premier League Table</h3>
+                <div class="table-container">
+                    <div class="table-header">
+                        <div class="pos">Pos</div>
+                        <div class="team">Team</div>
+                        <div class="pts">Pts</div>
+                        <div class="form">Form</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="pos">1</div>
                         <div class="team">
                             <img src="https://via.placeholder.com/20/ffffff/000000?text=ARS" alt="Arsenal">
                             <span>Arsenal</span>
                         </div>
+                        <div class="pts">78</div>
+                        <div class="form">WWWDW</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="pos">2</div>
+                        <div class="team">
+                            <img src="https://via.placeholder.com/20/ffffff/000000?text=MCI" alt="Man City">
+                            <span>Man City</span>
+                        </div>
+                        <div class="pts">75</div>
+                        <div class="form">DWWLW</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="pos">3</div>
+                    <div class="team">
+                        <img src="https://via.placeholder.com/20/ffffff/000000?text=LIV" alt="Liverpool">
+                        <span>Liverpool</span>
+                    </div>
+                    <div class="pts">72</div>
+                    <div class="form">WLWWW</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="pos">4</div>
+                        <div class="team">
+                            <img src="https://via.placeholder.com/20/ffffff/000000?text=CHE" alt="Chelsea">
+                            <span>Chelsea</span>
+                        </div>
+                        <div class="pts">68</div>
+                        <div class="form">LDWWW</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="pos">5</div>
+                        <div class="team">
+                            <img src="https://via.placeholder.com/20/ffffff/000000?text=TOT" alt="Tottenham">
+                            <span>Tottenham</span>
+                        </div>
+                        <div class="pts">62</div>
+                        <div class="form">WWLDW</div>
+                    </div>
+                </div>
+                <a href="#" class="view-all-table">View Full Table →</a>
+            </div>
+            
+            <div class="widget newsletter">
+                <h3>Get Football Updates</h3>
+                <p>Stay updated with the latest football news, match reports, and transfer rumors delivered straight to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p class="newsletter-note">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            
+            <div class="widget social">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><span>🐦</span></a>
+                    <a href="#" aria-label="Facebook"><span>👍</span></a>
+                    <a href="#" aria-label="Instagram"><span>📸</span></a>
+                    <a href="#" aria-label="YouTube"><span>▶️</span></a>
+                    <a href="#" aria-label="TikTok"><span>🎵</span></a>
+                </div>
+                <div class="social-note">Follow for instant match updates and breaking news</div>
+            </div>
+        </aside>>
                         <span class="score">0</span>
                     </div>
                     <div class="teams">

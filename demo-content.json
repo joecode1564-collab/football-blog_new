@@ -5,23 +5,31 @@
     "description": "Your source for comprehensive football coverage tailored for casual fans who want quick, engaging updates without the overwhelm."
   },
   "navigation": [
-    {"label": "Home", "url": "#"},
-    {"label": "Matches", "url": "#matches"},
-    {"label": "Transfers", "url": "#transfers"},
-    {"label": "Leagues", "url": "#leagues"},
-    {"label": "Live Scores", "url": "#live-scores"},
-    {"label": "More", "url": "#more"}
+    {"label": "Home", "url": "#", "icon": "🏠"},
+    {"label": "Matches", "url": "#matches", "icon": "⚽", "dropdown": true},
+    {"label": "Transfers", "url": "#transfers", "icon": "🔄", "dropdown": true},
+    {"label": "Leagues", "url": "#leagues", "icon": "🏆", "dropdown": true},
+    {"label": "Features", "url": "#features", "icon": "⭐"},
+    {"label": "Tables", "url": "#tables", "icon": "📊"},
+    {"label": "Stats", "url": "#stats", "icon": "📈"},
+    {"label": "News", "url": "#news", "icon": "📰"}
   ],
   "featuredArticle": {
     "type": "transfer-news",
     "title": "Mbappé Completes Move to Real Madrid in Record Deal",
-    "excerpt": "Kylian Mbappé has finally made his long-awaited move to Real Madrid in a transfer that could reshape the balance of power in European football...",
+    "excerpt": "Kylian Mbappé has finally made his long-awaited move to Real Madrid in a transfer that could reshape the balance of power in European football. The deal, worth an initial €180 million with potential add-ons taking it to €220 million, makes him the most expensive player in football history...",
     "meta": {
       "author": "Football Focus",
       "time": "2 hours ago",
       "readTime": "5 min read"
     },
-    "image": "https://via.placeholder.com/800x400/1a1a1a/ffffff?text=Mbapp%C3%A9+Real+Madrid"
+    "badges": ["BREAKING", "EXCLUSIVE"],
+    "tags": ["Transfer News", "Real Madrid", "PSG", "Ligue 1", "La Liga"],
+    "image": "https://via.placeholder.com/800x400/1a1a1a/ffffff?text=Mbapp%C3%A9+Real+Madrid",
+    "cta": [
+      {"text": "Read Full Story →", "type": "primary"},
+      {"text": "Watch Transfer Details", "type": "outline"}
+    ]
   },
   "recentArticles": [
     {
@@ -33,6 +41,7 @@
         "time": "3 hours ago",
         "readTime": "4 min read"
       },
+      "tags": ["Match Report", "Premier League", "Man City", "Liverpool"],
       "matchInfo": {
         "homeTeam": {
           "name": "Manchester City",
@@ -58,6 +67,7 @@
         "time": "5 hours ago",
         "readTime": "6 min read"
       },
+      "tags": ["Transfer News", "Real Madrid", "Bellingham", "Borussia Dortmund"],
       "transferInfo": {
         "player": {
           "name": "Jude Bellingham",
@@ -87,6 +97,7 @@
         "time": "Live now",
         "readTime": "Ongoing coverage"
       },
+      "tags": ["Live Match", "La Liga", "Barcelona", "Real Madrid"],
       "liveMatchInfo": {
         "homeTeam": {
           "name": "Barcelona",
@@ -112,6 +123,7 @@
         "time": "Yesterday, 5:00 PM",
         "readTime": "4 min read"
       },
+      "tags": ["Match Report", "Premier League", "Arsenal", "Chelsea", "North London Derby"],
       "matchInfo": {
         "homeTeam": {
           "name": "Arsenal",

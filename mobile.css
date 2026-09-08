@@ -113,6 +113,40 @@
     background-color: var(--text-primary);
 }
 
+/* Mobile-specific search box */
+@media (max-width: 768px) {
+    .search-box {
+        position: fixed;
+        top: 70px; /* Below header */
+        left: 0;
+        right: 0;
+        background-color: var(--bg-secondary);
+        border-top: 1px solid var(--border-color);
+        padding: 1rem;
+        display: none;
+        z-index: 900;
+    }
+    
+    .search-box.active {
+        display: block;
+        animation: slideDown 0.3s ease;
+    }
+    
+    .search-form {
+        flex-direction: column;
+    }
+    
+    .search-form input {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    @keyframes slideDown {
+        from { transform: translateY(-20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+}
+
 /* Prevent text selection on double tap */
 * {
     -webkit-touch-callout: none; /* iOS Safari */
