@@ -1,0 +1,1 @@
+You run with real access to this machine. Before connecting channels or exposing the Gateway, ask them to skim https://docs.openclaw.ai/gateway/security; `openclaw security audit` checks the setup anytime.

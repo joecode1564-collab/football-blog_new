@@ -1,0 +1,164 @@
+{
+  "siteInfo": {
+    "name": "Football Focus",
+    "tagline": "Latest Football News, Match Reports & Transfer Updates",
+    "description": "Your source for comprehensive football coverage tailored for casual fans who want quick, engaging updates without the overwhelm."
+  },
+  "navigation": [
+    {"label": "Home", "url": "#"},
+    {"label": "Matches", "url": "#matches"},
+    {"label": "Transfers", "url": "#transfers"},
+    {"label": "Leagues", "url": "#leagues"},
+    {"label": "Live Scores", "url": "#live-scores"},
+    {"label": "More", "url": "#more"}
+  ],
+  "featuredArticle": {
+    "type": "transfer-news",
+    "title": "Mbappé Completes Move to Real Madrid in Record Deal",
+    "excerpt": "Kylian Mbappé has finally made his long-awaited move to Real Madrid in a transfer that could reshape the balance of power in European football...",
+    "meta": {
+      "author": "Football Focus",
+      "time": "2 hours ago",
+      "readTime": "5 min read"
+    },
+    "image": "https://via.placeholder.com/800x400/1a1a1a/ffffff?text=Mbapp%C3%A9+Real+Madrid"
+  },
+  "recentArticles": [
+    {
+      "type": "match-report",
+      "title": "Manchester City Edge Liverpool in Thrilling Encounter",
+      "excerpt": "In a pulsating Premier League clash, Manchester City secured a 2-1 victory over Liverpool thanks to a late goal from Haaland...",
+      "meta": {
+        "author": "Football Focus",
+        "time": "3 hours ago",
+        "readTime": "4 min read"
+      },
+      "matchInfo": {
+        "homeTeam": {
+          "name": "Manchester City",
+          "logo": "https://via.placeholder.com/30/ffffff/000000?text=MC"
+        },
+        "awayTeam": {
+          "name": "Liverpool",
+          "logo": "https://via.placeholder.com/30/ffffff/000000?text=LIV"
+        },
+        "score": "2-1",
+        "venue": "Etihad Stadium",
+        "time": "Today, 3:00 PM",
+        "status": "Full Time"
+      },
+      "image": "https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Man+City+vs+Liverpool"
+    },
+    {
+      "type": "transfer-news",
+      "title": "Real Madrid Secure Jude Bellingham Signature",
+      "excerpt": "Real Madrid have secured the signature of England international Jude Bellingham from Borussia Dortmund in a deal worth up to €103 million...",
+      "meta": {
+        "author": "Football Focus",
+        "time": "5 hours ago",
+        "readTime": "6 min read"
+      },
+      "transferInfo": {
+        "player": {
+          "name": "Jude Bellingham",
+          "position": "Central Midfielder",
+          "age": 20
+        },
+        "fromClub": {
+          "name": "Borussia Dortmund",
+          "logo": "https://via.placeholder.com/30/ffffff/000000?text=DOR"
+        },
+        "toClub": {
+          "name": "Real Madrid",
+          "logo": "https://via.placeholder.com/30/ffffff/000000?text=REAL"
+        },
+        "fee": "€103m",
+        "contract": "2029",
+        "status": "Completed"
+      },
+      "image": "https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Bellingham+Transfer"
+    },
+    {
+      "type": "live-match",
+      "title": "El Clásico: Barcelona vs Real Madrid",
+      "excerpt": "Catch all the action from the biggest match in Spanish football as Barcelona take on Real Madrid in a crucial La Liga encounter...",
+      "meta": {
+        "author": "Football Focus",
+        "time": "Live now",
+        "readTime": "Ongoing coverage"
+      },
+      "liveMatchInfo": {
+        "homeTeam": {
+          "name": "Barcelona",
+          "logo": "https://via.placeholder.com/30/ffffff/000000?text=BAR"
+        },
+        "awayTeam": {
+          "name": "Real Madrid",
+          "logo": "https://via.placeholder.com/30/ffffff/000000?text=REAL"
+        },
+        "score": "2-1",
+        "time": "82'",
+        "status": "Live",
+        "whereToWatch": "ESPN+, LaLiga TV"
+      },
+      "image": "https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Live+Match"
+    },
+    {
+      "type": "match-report",
+      "title": "Arsenal Hold Chelsea to Draw in North London Derby",
+      "excerpt": "Arsenal and Chelsea played out a 1-1 draw in a tightly contested North London derby that had implications for both teams' European hopes...",
+      "meta": {
+        "author": "Football Focus",
+        "time": "Yesterday, 5:00 PM",
+        "readTime": "4 min read"
+      },
+      "matchInfo": {
+        "homeTeam": {
+          "name": "Arsenal",
+          "logo": "https://via.placeholder.com/30/ffffff/000000?text=ARS"
+        },
+        "awayTeam": {
+          "name": "Chelsea",
+          "logo": "https://via.placeholder.com/30/ffffff/000000?text=CHE"
+        },
+        "score": "1-1",
+        "venue": "Emirates Stadium",
+        "time": "Yesterday, 5:00 PM",
+        "status": "Full Time"
+      },
+      "image": "https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Arsenal+Chelsea"
+    }
+  ],
+  "liveMatches": [
+    {
+      "homeTeam": {
+        "name": "Barcelona",
+        "logo": "https://via.placeholder.com/20/ffffff/000000?text=BAR"
+      },
+      "awayTeam": {
+        "name": "Real Madrid",
+        "logo": "https://via.placeholder.com/20/ffffff/000000?text=REAL"
+      },
+      "score": "2-1",
+      "time": "82'"
+    },
+    {
+      "homeTeam": {
+        "name": "Arsenal",
+        "logo": "https://via.placeholder.com/20/ffffff/000000?text=ARS"
+      },
+      "awayTeam": {
+        "name": "Chelsea",
+        "logo": "https://via.placeholder.com/20/ffffff/000000?text=CHE"
+      },
+      "score": "0-0",
+      "time": "78'"
+    }
+  ],
+  "socialLinks": [
+    {"platform": "Twitter", "icon": "🐦", "label": "Twitter"},
+    {"platform": "Facebook", "icon": "👍", "label": "Facebook"},
+    {"platform": "Instagram", "icon": "📸", "label": "Instagram"},
+    {"platform": "YouTube", "icon": "▶️", "label": "YouTube"}
+  ]
+}

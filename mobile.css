@@ -1,0 +1,131 @@
+/* Mobile-Specific Enhancements for Football Focus */
+
+/* Touch-friendly adjustments */
+.nav-menu ul li a {
+    padding: 1rem 0.5rem;
+    min-height: 44px; /* Minimum touch target size */
+    display: flex;
+    align-items: center;
+}
+
+.mobile-menu-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Article card touch enhancements */
+.article-card {
+    touch-action: manipulation; /* Better touch response */
+}
+
+.article-card:active {
+    transform: translateY(-2px);
+}
+
+/* Form element touch optimization */
+.newsletter-form input,
+.newsletter-form button {
+    min-height: 44px;
+    font-size: 1rem; /* Readable on small screens */
+}
+
+/* Improved spacing for mobile */
+.widget {
+    padding: 1.25rem;
+}
+
+.widget h3 {
+    font-size: 1.1rem;
+}
+
+.live-tracker .live-match-item {
+    padding: 0.75rem 0;
+}
+
+.live-tracker .team img {
+    width: 14px;
+    height: 14px;
+}
+
+.live-tracker .score {
+    min-width: 20px;
+    font-size: 0.9rem;
+}
+
+.live-tracker .match-time {
+    font-size: 0.75rem;
+}
+
+/* Footer adjustments for mobile */
+.footer-content {
+    gap: 1.5rem;
+}
+
+.footer-info,
+.footer-links {
+    text-align: center;
+    width: 100%;
+}
+
+.footer-links h4 {
+    margin-top: 1rem;
+}
+
+/* Header logo adjustment */
+.logo h1 {
+    font-size: 1.4rem;
+    padding: 1rem 0;
+}
+
+/* Article typography adjustments for mobile */
+.featured-article h2 {
+    font-size: 1.6rem;
+}
+
+.article-card h3 {
+    font-size: 1.2rem;
+}
+
+.article-card .article-excerpt {
+    font-size: 0.95rem;
+}
+
+.read-more {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+}
+
+/* Hamburger menu animation */
+.hamburger.active {
+    background-color: transparent;
+}
+
+.hamburger.active::before {
+    transform: rotate(45deg) translate(5px, 5px);
+    background-color: var(--text-primary);
+}
+
+.hamburger.active::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+    background-color: var(--text-primary);
+}
+
+/* Prevent text selection on double tap */
+* {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Safari */
+}
+
+a, button, input, textarea, select {
+    -webkit-user-select: text; /* Allow text selection in interactive elements */
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
