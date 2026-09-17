@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Football Focus - Latest Football News</title>
+    <title>LiveScores - Real-time Sports Scores & Results</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css">
 </head>
@@ -11,57 +11,27 @@
     <header class="site-header">
         <div class="container">
             <div class="logo">
-                <h1>Football Focus</h1>
-                <p class="tagline">Latest Football News, Match Reports & Transfer Updates</p>
+                <h1>LiveScores</h1>
+                <p class="tagline">Real-time Sports Scores & Results</p>
             </div>
-            <nav class="nav-menu">
+            <nav class="sport-nav">
                 <ul>
-                    <li class="has-dropdown">
-                        <a href="#">Leagues ▼</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Premier League</a></li>
-                            <li><a href="#">La Liga</a></li>
-                            <li><a href="#">Bundesliga</a></li>
-                            <li><a href="#">Serie A</a></li>
-                            <li><a href="#">Ligue 1</a></li>
-                            <li><a href="#">Champions League</a></li>
-                            <li><a href="#">Europa League</a></li>
-                            <li><a href="#">International</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="#">Matches ▼</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Today's Matches</a></li>
-                            <li><a href="#">Live Now</a></li>
-                            <li><a href="#">Upcoming Fixtures</a></li>
-                            <li><a href="#">Recent Results</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="#">Transfers ▼</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Latest Transfers</a></li>
-                            <li><a href="#">Transfer Rumors</a></li>
-                            <li><a href="#">Free Agents</a></li>
-                            <li><a href="#">Transfer Deadline Day</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Tables</a></li>
-                    <li><a href="#">Stats</a></li>
+                    <li class="active" data-sport="football"><a href="#">Football ⚽</a></li>
+                    <li data-sport="tennis"><a href="#">Tennis 🎾</a></li>
+                    <li data-sport="basketball"><a href="#">Basketball 🏀</a></li>
+                    <li data-sport="baseball"><a href="#">Baseball ⚾</a></li>
+                    <li data-sport="hockey"><a href="#">Hockey 🏒</a></li>
+                    <li data-sport="rugby"><a href="#">Rugby 🏉</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                <button class="search-toggle" aria-label="Search">
-                    <span>🔍</span>
+                <button class="notifications-btn" aria-label="Notifications">
+                    <span>🔔</span>
+                    <span class="notification-count">3</span>
                 </button>
-                <div class="search-box">
-                    <form class="search-form">
-                        <input type="text" placeholder="Search for teams, players, matches..." aria-label="Search football content">
-                        <button type="submit">Search</button>
-                    </form>
-                </div>
+                <button class="settings-btn" aria-label="Settings">
+                    <span>⚙️</span>
+                </button>
                 <button class="mobile-menu-toggle" aria-label="Open menu">
                     <span class="hamburger"></span>
                 </button>
@@ -69,431 +39,400 @@
         </div>
     </header>
 
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-nav">
-        <div class="container">
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Features</a></li>
-                <li class="active">Latest Football News & Updates</li>
-            </ol>
-        </div>
-    </nav>
-
     <main class="site-main">
-        <section class="hero-section">
+        <!-- Sport-Specific Content Area -->
+        <section class="sport-content" data-sport="football">
             <div class="container">
-                <article class="featured-article">
-                    <div class="article-badge">BREAKING</div>
-                    <div class="article-category transfer-news">Transfer News</div>
-                    <h2>Mbappé Completes Move to Real Madrid in Record Deal</h2>
-                    <div class="article-meta">
-                        <span>By Football Focus</span>
-                        <span>•</span>
-                        <span>2 hours ago</span>
-                        <span>•</span>
-                        <span>5 min read</span>
-                    </p>
-                    <p class="article-excerpt">Kylian Mbappé has finally made his long-awaited move to Real Madrid in a transfer that could reshape the balance of power in European football. The deal, worth an initial €180 million with potential add-ons taking it to €220 million, makes him the most expensive player in football history...</p>
-                    <div class="article-actions">
-                        <a href="#" class="btn btn-primary">Read Full Story →</a>
-                        <a href="#" class="btn btn-outline">Watch Transfer Details</a>
+                <!-- Live Matches Section -->
+                <section class="live-matches-section">
+                    <h2 class="section-title">
+                        <span class="sport-icon">⚽</span>
+                        Live Matches
+                        <span class="match-count">(4)</span>
+                    </h2>
+                    <div class="live-matches-container">
+                        <!-- Live Match Items -->
+                        <div class="live-match-item live" data-match-id="1">
+                            <div class="match-header">
+                                <div class="match-time">45'</div>
+                                <div class="match-status live">LIVE</div>
+                            </div>
+                            <div class="teams-container">
+                                <div class="team home">
+                                    <div class="team-logo">
+                                        <img src="https://via.placeholder.com/30/ffffff/000000?text=MUN" alt="Man United">
+                                    </div>
+                                    <div class="team-name">Manchester United</div>
+                                </div>
+                                <div class="score">
+                                    <div class="home-score">2</div>
+                                    <div class="separator">–</div>
+                                    <div class="away-score">1</div>
+                                </div>
+                                <div class="team away">
+                                    <div class="team-logo">
+                                        <img src="https://via.placeholder.com/30/ffffff/000000?text=LIV" alt="Liverpool">
+                                    </div>
+                                    <div class="team-name">Liverpool</div>
+                                </div>
+                            </div>
+                            <div class="match-info">
+                                <div class="match-venue">Old Trafford</div>
+                                <div class="match-league">Premier League</div>
+                            </div>
+                            <div class="match-events">
+                                <span class="event goal home">⚽ 12' (Rashford)</span>
+                                <span class="event goal away">⚽ 28' (Salah)</span>
+                                <span class="event goal home">⚽ 44' (Bruno Fernandes)</span>
+                                <span class="event card away">🟨 30' (Alisson)</span>
+                                <span class="event sub home">🔄 40' (Antony for Sancho)</span>
+                            </div>
+                        </div>
+
+                        <div class="live-match-item live" data-match-id="2">
+                            <div class="match-header">
+                                <div class="match-time">22'</div>
+                                <div class="match-status live">LIVE</div>
+                            </div>
+                            <div class="teams-container">
+                                <div class="team home">
+                                    <div class="team-logo">
+                                        <img src="https://via.placeholder.com/30/ffffff/000000?text=BAR" alt="Barcelona">
+                                    </div>
+                                    <div class="team-name">Barcelona</div>
+                                </div>
+                                <div class="score">
+                                    <div class="home-score">0</div>
+                                    <div class="separator">–</div>
+                                    <div class="away-score">0</div>
+                                </div>
+                                <div class="team away">
+                                    <div class="team-logo">
+                                        <img src="https://via.placeholder.com/30/ffffff/000000?text=REAL" alt="Real Madrid">
+                                    </div>
+                                    <div class="team-name">Real Madrid</div>
+                                </div>
+                            </div>
+                            <div class="match-info">
+                                <div class="match-venue">Camp Nou</div>
+                                <div class="match-league">La Liga</div>
+                            </div>
+                            <div class="match-events">
+                                <span class="event card home">🟨 18' (Pedri)</span>
+                                <span class="event card away">🟨 20' (Modric)</span>
+                            </div>
+                        </div>
+
+                        <div class="live-match-item upcoming" data-match-id="3">
+                            <div class="match-header">
+                                <div class="match-time">In 15'</div>
+                                <div class="match-status upcoming">UPCOMING</div>
+                            </div>
+                            <div class="teams-container">
+                                <div class="team home">
+                                    <div class="team-logo">
+                                        <img src="https://via.placeholder.com/30/ffffff/000000?text=CHE" alt="Chelsea">
+                                    </div>
+                                    <div class="team-name">Chelsea</div>
+                                </div>
+                                <div class="score">
+                                    <div class="home-score">–</div>
+                                    <div class="separator">–</div>
+                                    <div class="away-score">–</div>
+                                </div>
+                                <div class="team away">
+                                    <div class="team-logo">
+                                        <img src="https://via.placeholder.com/30/ffffff/000000?text=ARS" alt="Arsenal">
+                                    </div>
+                                    <div class="team-name">Arsenal</div>
+                                </div>
+                            </div>
+                            <div class="match-info">
+                                <div class="match-venue">Stamford Bridge</div>
+                                <div class="match-league">Premier League</div>
+                            </div>
+                        </div>
+
+                        <div class="live-match-item recent" data-match-id="4">
+                            <div class="match-header">
+                                <div class="match-time">FT</div>
+                                <div class="match-status recent">FINISHED</div>
+                            </div>
+                            <div class="teams-container">
+                                <div class="team home">
+                                    <div class="team-logo">
+                                        <img src="https://via.placeholder.com/30/ffffff/000000?text=JUV" alt="Juventus">
+                                    </div>
+                                    <div class="team-name">Juventus</div>
+                                </div>
+                                <div class="score">
+                                    <div class="home-score">3</div>
+                                    <div class="separator">–</div>
+                                    <div class="away-score">1</div>
+                                </div>
+                                <div class="team away">
+                                    <div class="team-logo">
+                                        <img src="https://via.placeholder.com/30/ffffff/000000?text=MIL" alt="AC Milan">
+                                    </div>
+                                    <div class="team-name">AC Milan</div>
+                                </div>
+                            </div>
+                            <div class="match-info">
+                                <div class="match-venue">Allianz Stadium</div>
+                                <div class="match-league">Serie A</div>
+                            </div>
+                            <div class="match-events">
+                                <span class="event goal home">⚽ 15' (Vlahović)</span>
+                                <span class="event goal home">⚽ 32' (Chiesa)</span>
+                                <span class="event goal away">⚽ 58' (Leão)</span>
+                                <span class="event goal home">⚽ 76' (Di María)</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="article-tags">
-                        <span class="tag">Transfer News</span>
-                        <span class="tag">Real Madrid</span>
-                        <span class="tag">PSG</span>
-                        <span class="tag">Ligue 1</span>
-                        <span class="tag">La Liga</span>
+                </section>
+
+                <!-- Today's Matches Section -->
+                <section class="matches-section">
+                    <h2 class="section-title">
+                        <span class="sport-icon">📅</span>
+                        Today's Matches
+                    </h2>
+                    <div class="matches-grid">
+                        <!-- Match Cards -->
+                        <div class="match-card" data-match-id="5">
+                            <div class="match-time">14:00</div>
+                            <div class="teams">
+                                <div class="team">
+                                    <div class="team-logo">
+                                        <img src="https://via.placeholder.com/25/ffffff/000000?text=BVN" alt="Bayern">
+                                    </div>
+                                    <div class="team-name">Bayern Munich</div>
+                                </div>
+                                <div class="vs">–</div>
+                                <div class="team">
+                                    <div class="team-logo">
+                                        <img src="https://via.placeholder.com/25/ffffff/000000?text=DOR" alt="Dortmund">
+                                    </div>
+                                    <div class="team-name">Borussia Dortmund</div>
+                                </div>
+                            </div>
+                            <div class="match-info">
+                                <div class="match-league">Bundesliga</div>
+                                <div class="match-status">Scheduled</div>
+                            </div>
+                        </div>
+
+                        <div class="match-card" data-match-id="6">
+                            <div class="match-time">16:30</div>
+                            <div class="teams">
+                                <div class="team">
+                                    <div class="team-logo">
+                                        <img src="https://via.placeholder.com/25/ffffff/000000?text=PSG" alt="PSG">
+                                    </div>
+                                    <div class="team-name">Paris Saint-Germain</div>
+                                </div>
+                                <div class="vs">–</div>
+                                <div class="team">
+                                    <div class="team-logo">
+                                        <img src="https://via.placeholder.com/25/ffffff/000000?text=LM" alt="Lyon">
+                                    </div>
+                                    <div class="team-name">Olympique Lyon</div>
+                                </div>
+                            </div>
+                            <div class="match-info">
+                                <div class="match-league">Ligue 1</div>
+                                <div class="match-status">Scheduled</div>
+                            </div>
+                        </div>
+
+                        <div class="match-card" data-match-id="7">
+                            <div class="match-time">18:45</div>
+                            <div class="teams">
+                                <div class="team">
+                                    <div class="team-logo">
+                                        <img src="https://via.placeholder.com/25/ffffff/000000?text=SEV" alt="Sevilla">
+                                    </div>
+                                    <div class="team-name">Sevilla</div>
+                                </div>
+                                <div class="vs">–</div>
+                                <div class="team">
+                                    <div class="team-logo">
+                                        <img src="https://via.placeholder.com/25/ffffff/000000?text=BET" alt="Betis">
+                                    </div>
+                                    <div class="team-name">Real Betis</div>
+                                </div>
+                            </div>
+                            <div class="match-info">
+                                <div class="match-league">La Liga</div>
+                                <div class="match-status">Scheduled</div>
+                            </div>
+                        </div>
                     </div>
-                </article>
+                </section>
+
+                <!-- League Tables Section -->
+                <section class="league-tables-section">
+                    <h2 class="section-title">
+                        <span class="sport-icon">📊</span>
+                        League Tables
+                    </h2>
+                    <div class="league-tabs">
+                        <button class="tab-btn active" data-league="premier-league">Premier League</button>
+                        <button class="tab-btn" data-league="la-liga">La Liga</button>
+                        <button class="tab-btn" data-league="bundesliga">Bundesliga</button>
+                        <button class="tab-btn" data-league="serie-a">Serie A</button>
+                        <button class="tab-btn" data-league="ligue-1">Ligue 1</button>
+                    </div>
+                    <div class="league-table-container">
+                        <!-- Premier League Table (Active) -->
+                        <div class="league-table" data-league="premier-league">
+                            <div class="table-header">
+                                <div class="pos">#</div>
+                                <div class="team">Team</div>
+                                <div class="played">Pld</div>
+                                <div class="win">W</div>
+                                <div class="draw">D</div>
+                                <div class="loss">L</div>
+                                <div class="gf">GF</div>
+                                <div class="ga">GA</div>
+                                <div class="gd">GD</div>
+                                <div class="pts">Pts</div>
+                            </div>
+                            <div class="table-body">
+                                <div class="table-row position-1">
+                                    <div class="pos">1</div>
+                                    <div class="team">
+                                        <div class="team-logo-small">
+                                            <img src="https://via.placeholder.com/20/ffffff/000000?text=MCI" alt="Man City">
+                                        </div>
+                                        <div class="team-name">Manchester City</div>
+                                    </div>
+                                    <div class="played">8</div>
+                                    <div class="win">6</div>
+                                    <div class="draw">1</div>
+                                    <div class="loss">1</div>
+                                    <div class="gf">18</div>
+                                    <div class="ga">5</div>
+                                    <div class="gd">+13</div>
+                                    <div class="pts">19</div>
+                                </div>
+                                <div class="table-row position-2">
+                                    <div class="pos">2</div>
+                                    <div class="team">
+                                        <div class="team-logo-small">
+                                            <img src="https://via.placeholder.com/20/ffffff/000000?text=ARS" alt="Arsenal">
+                                        </div>
+                                        <div class="team-name">Arsenal</div>
+                                    </div>
+                                    <div class="played">8</div>
+                                    <div class="win">5</div>
+                                    <div class="draw">2</div>
+                                    <div class="loss">1</div>
+                                    <div class="gf">14</div>
+                                    <div class="ga">6</div>
+                                    <div class="gd">+8</div>
+                                    <div class="pts">17</div>
+                                </div>
+                                <div class="table-row position-3">
+                                    <div class="pos">3</div>
+                                    <div class="team">
+                                        <div class="team-logo-small">
+                                            <img src="https://via.placeholder.com/20/ffffff/000000?text=LIV" alt="Liverpool">
+                                        </div>
+                                        <div class="team-name">Liverpool</div>
+                                    </div>
+                                    <div class="played">8</div>
+                                    <div class="win">5</div>
+                                    <div class="draw">1</div>
+                                    <div class="loss">2</div>
+                                    <div class="gf">16</div>
+                                    <div class="ga">9</div>
+                                    <div class="gd">+7</div>
+                                    <div class="pts">16</div>
+                                </div>
+                                <div class="table-row position-4">
+                                    <div class="pos">4</div>
+                                    <div class="team">
+                                        <div class="team-logo-small">
+                                            <img src="https://via.placeholder.com/20/ffffff/000000?text=CHE" alt="Chelsea">
+                                        </div>
+                                        <div class="team-name">Chelsea</div>
+                                    </div>
+                                    <div class="played">7</div>
+                                    <div class="win">4</div>
+                                    <div class="draw">2</div>
+                                    <div class="loss">1</div>
+                                    <div class="gf">12</div>
+                                    <div class="ga">7</div>
+                                    <div class="gd">+5</div>
+                                    <div class="pts">14</div>
+                                </div>
+                                <div class="table-row position-5">
+                                    <div class="pos">5</div>
+                                    <div class="team">
+                                        <div class="team-logo-small">
+                                            <img src="https://via.placeholder.com/20/ffffff/000000?text=TOT" alt="Tottenham">
+                                        </div>
+                                        <div class="team-name">Tottenham</div>
+                                    </div>
+                                    <div class="played">8</div>
+                                    <div class="win">4</div>
+                                    <div class="draw">2</div>
+                                    <div class="loss">2</div>
+                                    <div class="gf">15</div>
+                                    <div class="ga">10</div>
+                                    <div class="gd">+5</div>
+                                    <div class="pts">14</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </section>
-
-        <section class="content-section">
-            <div class="container">
-                <!-- Content Header -->
-                <div class="content-header">
-                    <h2>Latest Football Updates</h2>
-                    <div class="content-tabs">
-                        <button class="tab-active" data-tab="all">All Content</button>
-                        <button data-tab="matches">Matches</button>
-                        <button data-tab="transfers">Transfers</button>
-                        <button data-tab="features">Features</button>
-                    </div>
-                </div>
-                
-                <div class="articles-grid">
-                    <!-- Match Report -->
-                    <article class="article-card match-report">
-                        <div class="article-category match-report">Match Report</div>
-                        <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Man+City+vs+Liverpool" alt="Man City vs Liverpool">
-                        <div class="match-info">
-                            <div class="teams">
-                                <div class="team home">
-                                    <img src="https://via.placeholder.com/30/ffffff/000000?text=MC" alt="Man City">
-                                    <span>Man City</span>
-                                </div>
-                                <div class="vs">vs</div>
-                                <div class="team away">
-                                    <img src="https://via.placeholder.com/30/ffffff/000000?text=LIV" alt="Liverpool">
-                                    <span>Liverpool</span>
-                                </div>
-                            </div>
-                            <div class="match-details">
-                                <span class="match-time">Today, 3:00 PM</span>
-                                <span class="match-venue">Etihad Stadium</span>
-                            </div>
-                        </div>
-                        <h3>Manchester City Edge Liverpool in Thrilling Encounter</h3>
-                        <p class="article-excerpt">In a pulsating Premier League clash, Manchester City secured a 2-1 victory over Liverpool thanks to a late goal from Haaland...</p>
-                        <a href="#" class="read-more">Read Match Report →</a>
-                    </article>
-
-                    <!-- Transfer News -->
-                    <article class="article-card transfer-news">
-                        <div class="article-category transfer-news">Transfer News</div>
-                        <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Bellingham+Transfer" alt="Bellingham Transfer">
-                        <div class="transfer-info">
-                            <div class="player-name">Jude Bellingham</div>
-                            <div class="transfer-details">
-                                <span class="transfer-fee">€103m</span>
-                                <span class="transfer-status">Completed</span>
-                            </div>
-                            <div class="clubs">
-                                <div class="club from">
-                                    <img src="https://via.placeholder.com/20/ffffff/000000?text=DOR" alt="Dortmund">
-                                    <span>Borussia Dortmund</span>
-                                </div>
-                                <div class="arrow">→</div>
-                                <div class="club to">
-                                    <img src="https://via.placeholder.com/20/ffffff/000000?text=REAL" alt="Real Madrid">
-                                    <span>Real Madrid</span>
-                                </div>
-                            </div>
-                        </div>
-                        <h3>Real Madrid Secure Jude Bellingham Signature</h3>
-                        <p class="article-excerpt">Real Madrid have secured the signature of England international Jude Bellingham from Borussia Dortmund in a deal worth up to €103 million...</p>
-                        <a href="#" class="read-more">Read Transfer News →</a>
-                    </article>
-
-                    <!-- Live Match Info -->
-                    <article class="article-card live-match">
-                        <div class="article-category live-match">Live Match</div>
-                        <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Live+Match" alt="Live Match">
-                        <div class="live-match-info">
-                            <div class="teams">
-                                <div class="team home">
-                                    <img src="https://via.placeholder.com/30/ffffff/000000?text=BAR" alt="Barcelona">
-                                    <span>Barcelona</span>
-                                </div>
-                                <div class="vs">vs</div>
-                                <div class="team away">
-                                    <img src="https://via.placeholder.com/30/ffffff/000000?text=REAL" alt="Real Madrid">
-                                    <span>Real Madrid</span>
-                                </div>
-                            </div>
-                            <div class="match-status">
-                                <div class="score">2 - 1</div>
-                                <div class="match-time">82'</div>
-                                <div class="match-status-text">Live</div>
-                            </div>
-                            <div class="where-to-watch">
-                                <span class="watch-icon">📺</span>
-                                <span>Watch on: ESPN+, LaLiga TV</span>
-                            </div>
-                        </div>
-                        <h3>El Clásico: Barcelona vs Real Madrid</h3>
-                        <p class="article-excerpt">Catch all the action from the biggest match in Spanish football as Barcelona take on Real Madrid in a crucial La Liga encounter...</p>
-                        <a href="#" class="read-more">Watch Live Updates →</a>
-                    </article>
-
-                    <!-- Another Match Report -->
-                    <article class="article-card match-report">
-                        <div class="article-category match-report">Match Report</div>
-                        <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Arsenal+Chelsea" alt="Arsenal vs Chelsea">
-                        <div class="match-info">
-                            <div class="teams">
-                                <div class="team home">
-                                    <img src="https://via.placeholder.com/30/ffffff/000000?text=ARS" alt="Arsenal">
-                                    <span>Arsenal</span>
-                                </div>
-                                <div class="vs">vs</div>
-                                <div class="team away">
-                                    <img src="https://via.placeholder.com/30/ffffff/000000?text=CHE" alt="Chelsea">
-                                    <span>Chelsea</span>
-                                </div>
-                            </div>
-                            <div class="match-details">
-                                <span class="match-time">Yesterday, 5:00 PM</span>
-                                <span class="match-venue">Emirates Stadium</span>
-                            </div>
-                        </div>
-                        <h3>Arsenal Hold Chelsea to Draw in North London Derby</h3>
-                        <p class="article-excerpt">Arsenal and Chelsea played out a 1-1 draw in a tightly contested North London derby that had implications for both teams' European hopes...</p>
-                        <a href="#" class="read-more">Read Match Report →</a>
-                    </article>
-                    
-                    <!-- Feature Article -->
-                    <article class="article-card feature">
-                        <div class="article-category feature">Feature</div>
-                        <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Football+Tactics" alt="Football Tactics Analysis">
-                        <div class="feature-content">
-                            <h3>The Evolution of Modern Full-Backs</h3>
-                            <p class="article-excerpt">From defensive stalwarts to attacking wing-backs, how the full-back position has transformed in modern football tactics...</p>
-                            <div class="feature-tags">
-                                <span class="tag">Tactics</span>
-                                <span class="tag">Analysis</span>
-                                <span class="tag">Premier League</span>
-                            </div>
-                        </div>
-                        <a href="#" class="read-more">Read Feature →</a>
-                    </article>
-                    
-                    <!-- Transfer Rumor -->
-                    <article class="article-card transfer-news transfer-rumor">
-                        <div class="article-category transfer-news">Transfer Rumor</div>
-                        <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Transfer+Rumor" alt="Transfer Rumor">
-                        <div class="transfer-info">
-                            <div class="player-name">Vinícius Júnior</div>
-                            <div class="transfer-details">
-                                <span class="transfer-fee">€150m+</span>
-                                <span class="transfer-status">Rumor</span>
-                            </div>
-                            <div class="clubs">
-                                <div class="club from">
-                                    <img src="https://via.placeholder.com/20/ffffff/000000?text=REAL" alt="Real Madrid">
-                                    <span>Real Madrid</span>
-                                </div>
-                                <div class="arrow">→</div>
-                                <div class="club to">
-                                    <img src="https://via.placeholder.com/20/ffffff/000000?text=PSG" alt="PSG">
-                                    <span>Paris Saint-Germain</span>
-                                </div>
-                            </div>
-                        </div>
-                        <h3>PSG Preparing Mega Offer for Vinícius Júnior</h3>
-                        <p class="article-excerpt">Paris Saint-Germain are reportedly preparing a groundbreaking offer that could test Real Madrid's resolve to keep their Brazilian star...</p>
-                        <a href="#" class="read-more">Read Rumor →</a>
-                    </article>
-                    
-                    <!-- Stats/Analysis Card -->
-                    <article class="article-card stats">
-                        <div class="article-category stats">Stats Center</div>
-                        <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Stats+Analysis" alt="Statistical Analysis">
-                        <div class="stats-content">
-                            <h3>Player Performance Tracker</h3>
-                            <p class="article-excerpt">Who are the top performers in Europe's top 5 leagues this season? We break down the numbers...</p>
-                            <div class="stats-preview">
-                                <div class="stat-item">
-                                    <div class="stat-value">12.3</div>
-                                    <div class="stat-label">xG per 90</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-value">87%</div>
-                                    <div class="stat-label">Pass Accuracy</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-value">3.2</div>
-                                    <div class="stat-label">Key Passes</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="read-more">View Stats →</a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <aside class="sidebar">
-            <div class="widget live-tracker">
-                <h3>Live Matches</h3>
-                <div class="live-match-item live">
-                    <div class="teams">
-                        <div class="team home">
-                            <img src="https://via.placeholder.com/20/ffffff/000000?text=BAR" alt="Barça">
-                            <span class="team-name">Barcelona</span>
-                        </div>
-                        <span class="score">2</span>
-                    </div>
-                    <div class="teams">
-                        <div class="team away">
-                            <img src="https://via.placeholder.com/20/ffffff/000000?text=REAL" alt="Real">
-                            <span class="team-name">Real Madrid</span>
-                        </div>
-                        <span class="score">1</span>
-                    </div>
-                    <div class="match-time">82′</div>
-                    <div class="match-events">
-                        <span class="event goal">⚽ 45'</span>
-                        <span class="event sub">🔄 67'</span>
-                        <span class="event goal">⚽ 80'</span>
-                    </div>
-                </div>
-                <div class="live-match-item upcoming">
-                    <div class="teams">
-                        <div class="team home">
-                            <img src="https://via.placeholder.com/20/ffffff/000000?text=ARS" alt="Arsenal">
-                            <span class="team-name">Arsenal</span>
-                        </div>
-                        <span class="score">0</span>
-                    </div>
-                    <div class="teams">
-                        <div class="team away">
-                            <img src="https://via.placeholder.com/20/ffffff/000000?text=CHE" alt="Chelsea">
-                            <span class="team-name">Chelsea</span>
-                        </div>
-                        <span class="score">0</span>
-                    </div>
-                    <div class="match-time">15′</div>
-                    <div class="match-events">
-                        <span class="event card">🟨 34'</span>
-                        <span class="event card">🟨 52'</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="widget league-table">
-                <h3>Premier League Table</h3>
-                <div class="table-container">
-                    <div class="table-header">
-                        <div class="pos">Pos</div>
-                        <div class="team">Team</div>
-                        <div class="pts">Pts</div>
-                        <div class="form">Form</div>
-                    </div>
-                    <div class="table-row">
-                        <div class="pos">1</div>
-                        <div class="team">
-                            <img src="https://via.placeholder.com/20/ffffff/000000?text=ARS" alt="Arsenal">
-                            <span>Arsenal</span>
-                        </div>
-                        <div class="pts">78</div>
-                        <div class="form">WWWDW</div>
-                    </div>
-                    <div class="table-row">
-                        <div class="pos">2</div>
-                        <div class="team">
-                            <img src="https://via.placeholder.com/20/ffffff/000000?text=MCI" alt="Man City">
-                            <span>Man City</span>
-                        </div>
-                        <div class="pts">75</div>
-                        <div class="form">DWWLW</div>
-                    </div>
-                    <div class="table-row">
-                        <div class="pos">3</div>
-                    <div class="team">
-                        <img src="https://via.placeholder.com/20/ffffff/000000?text=LIV" alt="Liverpool">
-                        <span>Liverpool</span>
-                    </div>
-                    <div class="pts">72</div>
-                    <div class="form">WLWWW</div>
-                    </div>
-                    <div class="table-row">
-                        <div class="pos">4</div>
-                        <div class="team">
-                            <img src="https://via.placeholder.com/20/ffffff/000000?text=CHE" alt="Chelsea">
-                            <span>Chelsea</span>
-                        </div>
-                        <div class="pts">68</div>
-                        <div class="form">LDWWW</div>
-                    </div>
-                    <div class="table-row">
-                        <div class="pos">5</div>
-                        <div class="team">
-                            <img src="https://via.placeholder.com/20/ffffff/000000?text=TOT" alt="Tottenham">
-                            <span>Tottenham</span>
-                        </div>
-                        <div class="pts">62</div>
-                        <div class="form">WWLDW</div>
-                    </div>
-                </div>
-                <a href="#" class="view-all-table">View Full Table →</a>
-            </div>
-            
-            <div class="widget newsletter">
-                <h3>Get Football Updates</h3>
-                <p>Stay updated with the latest football news, match reports, and transfer rumors delivered straight to your inbox.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-                <p class="newsletter-note">We respect your privacy. Unsubscribe anytime.</p>
-            </div>
-            
-            <div class="widget social">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#" aria-label="Twitter"><span>🐦</span></a>
-                    <a href="#" aria-label="Facebook"><span>👍</span></a>
-                    <a href="#" aria-label="Instagram"><span>📸</span></a>
-                    <a href="#" aria-label="YouTube"><span>▶️</span></a>
-                    <a href="#" aria-label="TikTok"><span>🎵</span></a>
-                </div>
-                <div class="social-note">Follow for instant match updates and breaking news</div>
-            </div>
-        </aside>>
-                        <span class="score">0</span>
-                    </div>
-                    <div class="teams">
-                        <div class="team">
-                            <img src="https://via.placeholder.com/20/ffffff/000000?text=CHE" alt="Chelsea">
-                            <span>Chelsea</span>
-                        </div>
-                        <span class="score">0</span>
-                    </div>
-                    <div class="match-time">78'</div>
-                </div>
-            </div>
-            
-            <div class="widget newsletter">
-                <h3>Get Football Updates</h3>
-                <p>Stay updated with the latest football news, match reports, and transfer rumors delivered straight to your inbox.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-            
-            <div class="widget social">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#" aria-label="Twitter"><span>🐦</span></a>
-                    <a href="#" aria-label="Facebook"><span>👍</span></a>
-                    <a href="#" aria-label="Instagram"><span>📸</span></a>
-                    <a href="#" aria-label="YouTube"><span>▶️</span></a>
-                </div>
-            </div>
-        </aside>
     </main>
 
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <h4>Football Focus</h4>
-                    <p>Your source for the latest football news, match reports, and transfer updates.</p>
+                    <h3>LiveScores</h3>
+                    <p>Real-time sports scores, results, and statistics from around the world.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Sections</h4>
+                    <h4>Sports</h4>
                     <ul>
-                        <li><a href="#">Match Reports</a></li>
-                        <li><a href="#">Transfer News</a></li>
+                        <li><a href="#">Football</a></li>
+                        <li><a href="#">Tennis</a></li>
+                        <li><a href="#">Basketball</a></li>
+                        <li><a href="#">Baseball</a></li>
+                        <li><a href="#">Hockey</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Features</h4>
+                    <ul>
                         <li><a href="#">Live Scores</a></li>
-                        <li><a href="#">Leagues</a></li>
+                        <li><a href="#">Results</a></li>
+                        <li><a href="#">Fixtures</a></li>
+                        <li><a href="#">Tables</a></li>
+                        <li><a href="#">Statistics</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
+                    <h4>About</h4>
+                    <div>
+                        <a href="#">Privacy Policy</a>
+                        <span>·</span>
+                        <a href="#">Terms of Service</a>
+                        <span>·</span>
+                        <a href="#">Contact Us</a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Football Focus. All rights reserved.</p>
+                <p>&copy; 2026 LiveScores. All rights reserved.</p>
+                <p>Data provided by official sports associations and partners.</p>
             </div>
         </div>
     </footer>

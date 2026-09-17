@@ -1,165 +1,362 @@
-/* Mobile-Specific Enhancements for Football Focus */
+/* Mobile-Specific Styles for LiveScores Platform */
 
-/* Touch-friendly adjustments */
-.nav-menu ul li a {
-    padding: 1rem 0.5rem;
-    min-height: 44px; /* Minimum touch target size */
-    display: flex;
-    align-items: center;
-}
-
-.mobile-menu-toggle {
-    min-width: 44px;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Article card touch enhancements */
-.article-card {
-    touch-action: manipulation; /* Better touch response */
-}
-
-.article-card:active {
-    transform: translateY(-2px);
-}
-
-/* Form element touch optimization */
-.newsletter-form input,
-.newsletter-form button {
-    min-height: 44px;
-    font-size: 1rem; /* Readable on small screens */
-}
-
-/* Improved spacing for mobile */
-.widget {
-    padding: 1.25rem;
-}
-
-.widget h3 {
-    font-size: 1.1rem;
-}
-
-.live-tracker .live-match-item {
-    padding: 0.75rem 0;
-}
-
-.live-tracker .team img {
-    width: 14px;
-    height: 14px;
-}
-
-.live-tracker .score {
-    min-width: 20px;
-    font-size: 0.9rem;
-}
-
-.live-tracker .match-time {
-    font-size: 0.75rem;
-}
-
-/* Footer adjustments for mobile */
-.footer-content {
-    gap: 1.5rem;
-}
-
-.footer-info,
-.footer-links {
-    text-align: center;
-    width: 100%;
-}
-
-.footer-links h4 {
-    margin-top: 1rem;
-}
-
-/* Header logo adjustment */
-.logo h1 {
-    font-size: 1.4rem;
-    padding: 1rem 0;
-}
-
-/* Article typography adjustments for mobile */
-.featured-article h2 {
-    font-size: 1.6rem;
-}
-
-.article-card h3 {
-    font-size: 1.2rem;
-}
-
-.article-card .article-excerpt {
-    font-size: 0.95rem;
-}
-
-.read-more {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.9rem;
-}
-
-/* Hamburger menu animation */
-.hamburger.active {
-    background-color: transparent;
-}
-
-.hamburger.active::before {
-    transform: rotate(45deg) translate(5px, 5px);
-    background-color: var(--text-primary);
-}
-
-.hamburger.active::after {
-    transform: rotate(-45deg) translate(5px, -5px);
-    background-color: var(--text-primary);
-}
-
-/* Mobile-specific search box */
+/* Mobile Header Adjustments */
 @media (max-width: 768px) {
-    .search-box {
-        position: fixed;
-        top: 70px; /* Below header */
-        left: 0;
-        right: 0;
-        background-color: var(--bg-secondary);
-        border-top: 1px solid var(--border-color);
-        padding: 1rem;
-        display: none;
-        z-index: 900;
+    .site-header {
+        height: auto;
+        padding: var(--spacing-sm) 0;
     }
     
-    .search-box.active {
-        display: block;
-        animation: slideDown 0.3s ease;
-    }
-    
-    .search-form {
+    .logo {
         flex-direction: column;
-    }
-    
-    .search-form input {
+        align-items: center;
+        text-align: center;
         width: 100%;
-        margin-bottom: 0.5rem;
+        padding: var(--spacing-sm) 0;
     }
     
-    @keyframes slideDown {
-        from { transform: translateY(-20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+    .logo h1 {
+        font-size: 1.25rem;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .logo .tagline {
+        font-size: 0.75rem;
+    }
+    
+    .sport-nav {
+        display: none;
+    }
+    
+    .header-actions {
+        justify-content: center;
+        width: 100%;
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-sm);
+    }
+    
+    .header-actions button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .notification-count {
+        top: -2px;
+        right: -2px;
+        font-size: 0.6rem;
+        min-width: 16px;
+        height: 16px;
     }
 }
 
-/* Prevent text selection on double tap */
-* {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE */
-    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Safari */
+/* Mobile Live Matches */
+@media (max-width: 768px) {
+    .live-matches-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .live-match-item {
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .live-match-item .teams-container {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .live-match-item .team {
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .live-match-item .score {
+        margin: var(--spacing-sm) 0;
+    }
+    
+    .live-match-item .match-info {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-sm);
+    }
+    
+    .live-match-item .match-events {
+        justify-content: center;
+    }
+    
+    .section-title {
+        text-align: center;
+    }
 }
 
-a, button, input, textarea, select {
-    -webkit-user-select: text; /* Allow text selection in interactive elements */
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
+/* Mobile Matches Grid */
+@media (max-width: 768px) {
+    .matches-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .match-card {
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .match-card .teams {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .match-card .team {
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .match-card .vs {
+        margin: var(--spacing-sm) 0;
+    }
+}
+
+/* Mobile League Tables */
+@media (max-width: 768px) {
+    .league-tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .tab-btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.8125rem;
+        white-space: nowrap;
+    }
+    
+    .league-table-header,
+    .league-table-body {
+        grid-template-columns: 20px 100px 30px 30px 30px 30px 30px 30px 30px 40px;
+        font-size: 0.75rem;
+    }
+    
+    .league-table-row {
+        grid-template-columns: 20px 100px 30px 30px 30px 30px 30px 30px 30px 40px;
+    }
+    
+    .league-table-row .team-name {
+        max-width: 80px;
+    }
+    
+    .league-table-row .played,
+    .league-table-row .win,
+    .league-table-row .draw,
+    .league-table-row .loss,
+    .league-table-row .gf,
+    .league-table-row .ga,
+    .league-table-row .gd,
+    .league-table-row .pts {
+        font-size: 0.75rem;
+    }
+}
+
+/* Ultra Mobile */
+@media (max-width: 480px) {
+    .site-header {
+        padding: var(--spacing-xs) 0;
+    }
+    
+    .header-actions {
+        gap: var(--spacing-xs);
+    }
+    
+    .header-actions button {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+    
+    .live-match-item .match-header {
+        padding: var(--spacing-sm);
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+    }
+    
+    .live-match-item .match-time {
+        font-size: 0.75rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .live-match-item .match-status {
+        font-size: 0.6875rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .live-match-item .teams-container {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .live-match-item .team-logo {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .live-match-item .team-name {
+        font-size: 0.75rem;
+        max-width: 80px;
+    }
+    
+    .live-match-item .score {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .live-match-item .home-score,
+    .live-match-item .away-score {
+        font-size: 1.25rem;
+    }
+    
+    .live-match-item .separator {
+        font-size: 1.4rem;
+    }
+    
+    .live-match-item .match-info {
+        font-size: 0.6875rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-xs);
+    }
+    
+    .live-match-item .match-events {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-xs);
+    }
+    
+    .live-match-item .event {
+        font-size: 0.625rem;
+        padding: var(--spacing-xs) var(--spacing-md);
+    }
+    
+    .matches-section .section-title {
+        font-size: 1rem;
+    }
+    
+    .match-card .match-time {
+        font-size: 0.75rem;
+        padding: var(--spacing-sm);
+    }
+    
+    .match-card .team-logo {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .match-card .team-name {
+        font-size: 0.6875rem;
+        max-width: 70px;
+    }
+    
+    .match-card .vs {
+        font-size: 0.75rem;
+    }
+    
+    .match-card .match-info {
+        font-size: 0.6875rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-xs);
+    }
+    
+    .league-table-header,
+    .league-table-body {
+        grid-template-columns: 15px 60px 20px 20px 20px 20px 20px 20px 20px 25px;
+        font-size: 0.6875rem;
+    }
+    
+    .league-table-row {
+        grid-template-columns: 15px 60px 20px 20px 20px 20px 20px 20px 20px 25px;
+    }
+    
+    .league-table-row .team-name {
+        max-width: 60px;
+    }
+    
+    .league-table-row .played,
+    .league-table-row .win,
+    .league-table-row .draw,
+    .league-table-row .loss,
+    .league-table-row .gf,
+    .league-table-row .ga,
+    .league-table-row .gd,
+    .league-table-row .pts {
+        font-size: 0.6875rem;
+    }
+    
+    .section-title {
+        font-size: 0.875rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+    
+    .footer-info,
+    .footer-links {
+        width: 100%;
+        text-align: center;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .footer-links h4 {
+        margin-top: var(--spacing-sm);
+    }
+}
+
+/* Touch Optimization */
+@media (hover: none) {
+    .header-actions button {
+        touch-action: manipulation;
+    }
+    
+    .tab-btn {
+        touch-action: manipulation;
+    }
+    
+    .live-match-item {
+        touch-action: manipulation;
+    }
+    
+    .match-card {
+        touch-action: manipulation;
+    }
+    
+    /* Prevent text selection on double tap */
+    * {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    a, button, input, textarea, select {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+    }
+}
+
+/* Reduce Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .live-match-item.live .match-time {
+        animation: none;
+    }
 }
