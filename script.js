@@ -63,18 +63,49 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Simple live match update simulation (for demo)
-    const liveScores = document.querySelectorAll('.live-tracker .score');
-    liveScores.forEach(score => {
-        // In a real app, this would come from an API
+    // Enhanced live match update simulation (Livesport.com inspired)
+    const liveMatchItems = document.querySelectorAll('.live-tracker .live-match-item');
+    liveMatchItems.forEach((item, index) => {
+        // In a real app, this would come from an API with match status
         setInterval(() => {
-            const currentScore = parseInt(score.textContent);
-            // Randomly update score for demo purposes
-            if (Math.random() > 0.7) { // 30% chance to update
-                const newScore = currentScore + (Math.random() > 0.5 ? 1 : 0);
-                score.textContent = newScore;
+            // Simulate different match statuses
+            const statuses = ['live', 'upcoming', 'recent'];
+            const currentStatus = statuses[index % statuses.length];
+            
+            // Update status class
+            item.className = 'live-match-item ' + currentStatus;
+            
+            // Update score for live matches
+            if (currentStatus === 'live') {
+                const scoreEl = item.querySelector('.score');
+                if (scoreEl) {
+                    const currentScore = parseInt(scoreEl.textContent) || 0;
+                    // Randomly update score (more frequent for live matches)
+                    if (Math.random() > 0.8) { // 20% chance to update
+                        const newScore = currentScore + (Math.random() > 0.5 ? 1 : 0);
+                        scoreEl.textContent = newScore;
+                    }
+                }
             }
-        }, 10000); // Update every 10 seconds
+            
+            // Update time for upcoming/recent matches
+            const timeEl = item.querySelector('.match-time');
+            if (timeEl) {
+                if (currentStatus === 'upcoming') {
+                    // Simulate countdown to kickoff
+                    const minutes = Math.floor(Math.random() * 120) + 5; // 5-125 mins away
+                    timeEl.textContent = `${minutes}'`;
+                } else if (currentStatus === 'recent') {
+                    // Simulate time since match ended
+                    const minutes = Math.floor(Math.random() * 90) + 10; // 10-100 mins ago
+                    timeEl.textContent = `${minutes}′`;
+                } else {
+                    // Live match - show elapsed time
+                    const minutes = Math.floor(Math.random() * 90) + 1; // 1-90 mins played
+                    timeEl.textContent = `${minutes}′`;
+                }
+            }
+        }, 8000 + Math.random() * 4000); // Staggered updates between 8-12 seconds
     });
     
     // Add smooth scrolling to anchor links

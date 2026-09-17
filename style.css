@@ -816,23 +816,59 @@ a:hover {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
 }
 
 .match-info .team {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    flex: 1;
+    min-width: 0;
 }
 
 .match-info .team img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.match-info .team-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Livesport.com inspired compact team names for tight spaces */
+.team-name-compact {
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60px;
 }
 
 .match-info .vs {
     font-weight: 600;
     color: var(--text-secondary);
+    flex-shrink: 0;
+}
+
+.match-info .vs::before,
+.match-info .vs::after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 2px;
+    background-color: var(--text-secondary);
+    margin: 0 4px;
+    vertical-align: middle;
 }
 
 .match-info .match-details {
@@ -841,6 +877,8 @@ a:hover {
     font-size: 0.9rem;
     color: var(--text-secondary);
     margin-top: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .match-info .match-time,
@@ -848,6 +886,7 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 0.3rem;
+    font-size: 0.85rem;
 }
 
 .transfer-info {
@@ -930,9 +969,11 @@ a:hover {
 }
 
 .live-match-info .score {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 800;
     color: var(--accent-primary);
+    font-family: 'Courier New', monospace;
+    letter-spacing: -1px;
 }
 
 .live-match-info .match-time {
@@ -1018,12 +1059,18 @@ a:hover {
     color: var(--accent-primary);
 }
 
+/* Enhanced Live Match Tracker (Inspired by Livesport.com) */
 .live-tracker .live-match-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
     border-bottom: 1px solid var(--border-color);
+    transition: background-color var(--transition-speed);
+}
+
+.live-tracker .live-match-item:hover {
+    background-color: var(--bg-tertiary);
 }
 
 .live-tracker .live-match-item:last-child {
@@ -1034,23 +1081,63 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    flex: 1;
+    min-width: 0; /* Allow shrinking */
+}
+
+.live-tracker .team {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
 }
 
 .live-tracker .team img {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.live-tracker .team-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80px;
 }
 
 .live-tracker .score {
-    font-weight: 600;
-    min-width: 25px;
+    font-weight: 700;
+    min-width: 30px;
     text-align: center;
+    flex-shrink: 0;
+    font-family: 'Courier New', monospace; /* Sport-score aesthetic */
 }
 
 .live-tracker .match-time {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.live-tracker .live-match-item.live .score {
+    color: var(--success-color);
+    animation: pulse 1.5s infinite;
+}
+
+.live-tracker .live-match-item.upcoming .score {
+    color: var(--accent-secondary);
+}
+
+.live-tracker .live-match-item.recent .score {
+    color: var(--text-secondary);
+}
+
+/* Pulse animation for live scores */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
 }
 
 .newsletter-form {
@@ -1177,6 +1264,74 @@ a:hover {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Compact Score Styling (Livesport.com Inspired) */
+.compact-score {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+}
+
+.compact-score .team-score {
+    min-width: 28px;
+    text-align: center;
+}
+
+.compact-score .separator {
+    font-weight: 800;
+    color: var(--accent-primary);
+    font-size: 1.1rem;
+}
+
+/* Match Events Styling (Livesport.com Inspired) */
+.match-events {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.event {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+}
+
+.event.goal {
+    background-color: rgba(255, 107, 53, 0.1);
+    color: var(--accent-primary);
+    border: 1px solid rgba(255, 107, 53, 0.3);
+}
+
+.event.card {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.event.sub {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: var(--success-color);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.event.yellow {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.event.red {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: var(--error-color);
+    border: 1px solid rgba(244, 67, 54, 0.3);
 }
 
 /* Footer Styles */
